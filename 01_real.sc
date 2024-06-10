@@ -2,10 +2,13 @@
 //> using dep "org.typelevel:spire_3:0.18.0"
 
 import spire.math.Real
+import java.math.RoundingMode.HALF_UP
 
 println(s"pi = ${Real.pi}")
 println(s"e = ${Real.e}")
 println(s"sqrt(2) = ${Real(2).sqrt}")
+println(s"sqrt(2).toRational(6) = ${Real(2).sqrt.toRational(6)}")
+println(s"sqrt(2).toRational(6).toBigDecimal(5, HALF_UP) = ${Real(2).sqrt.toRational(6).toBigDecimal(5, HALF_UP)}")
 println(s"sin(pi/4) = ${Real.sin(Real.pi/4)}")
 println(s"cos(pi/4) = ${Real.cos(Real.pi/4)}")
 println(s"tan(pi/4) = ${Real.tan(Real.pi/4)}")
